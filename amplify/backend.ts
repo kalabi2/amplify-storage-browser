@@ -7,5 +7,5 @@ import { auth } from './auth/resource';
  */
 defineBackend({
   auth,
-  storage, 
+  storage
 });
