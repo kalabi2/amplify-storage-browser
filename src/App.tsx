@@ -7,7 +7,7 @@ import './App.css';
 
 import config from '../amplify_outputs.json';
 import { Amplify } from 'aws-amplify';
-import { Authenticator, Button } from '@aws-amplify/ui-react';
+import { Authenticator, Button, Flex, Heading } from '@aws-amplify/ui-react';
 Amplify.configure(config);
 
 const { StorageBrowser } = createStorageBrowser({
@@ -19,10 +19,11 @@ function App() {
     <Authenticator>
       {({ signOut, user }) => (
         <>
-          <div className="header">
-            <h1>{`Hello ${user?.attributes?.email}`}</h1>
+          <Flex direction="row" alignItems="center" wrap="nowrap" gap="1rem">
+            <Heading level={4}>{`CSO AWS Storage Browser Portal`}</Heading>
+            <h1>{`Hello ${user?.attributes?.email || user?.username}`}</h1>
             <Button onClick={signOut}>Sign out</Button>
-          </div>
+           </Flex>
           <StorageBrowser />
         </>
       )}
