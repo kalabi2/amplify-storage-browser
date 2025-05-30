@@ -21,7 +21,7 @@ function App() {
         <>
           <Flex direction="row" alignItems="center" wrap="nowrap" gap="1rem">
             <Heading level={4}>{`CSO AWS Storage Browser Portal`}</Heading>
-            <h1>{`Hello ${user?.attributes?.email || user?.username}`}</h1>
+            <h1>{`Hello ${user?.username}`}</h1>
             <Button onClick={signOut}>Sign out</Button>
            </Flex>
           <StorageBrowser />
