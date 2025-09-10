@@ -1,7 +1,7 @@
 import { defineStorage } from '@aws-amplify/backend';
 
 export const storage = defineStorage({
-  name: 'myStorageBucket',
+  name: 'dedicated-switch-bucket ',
   isDefault: true,
    access: (allow) => ({
     'switch-folder/*': [
